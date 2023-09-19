@@ -43,9 +43,11 @@ body {
   
   /* Estilos dos produtos */
   .product {
+    background-color: #ececec;
     border: 1px solid #ddd;
     padding: 1rem;
     margin: 1rem;
+    border-radius: 15px;
     text-align: center;
   }
   
