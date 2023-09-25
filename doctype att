@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://github.com/code-blockers/back-end/blob/main/CodeBlockers/front-end/imagens/icon.jpg?raw=true" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Code Blockers</title>
+</head>
+<body>
+  <header>
+    <img class="logo" src="imagens/WhatsApp Image 2023-08-23 at 7.48.12 PM.jpeg" alt="">
+    <h1>Code Blockers</h1> 
+    <nav>
+      <ul>
+        <li><a href="doctype.html">Página Inicial</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product">
+      <img src="imagens/html_css_logo.png" alt="Curso 1">
+      <h2>Curso de HTML e CSS3</h2>
+      <p>Curso focado em linguagens front end.</p>
+      <a href='https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n'><button>Assistir</button></a>
+    </section>
+    <section class="product">
+      <img src="imagens/javascript_logo.png"  id="img-more-white" alt="Curso 2">
+      <h2>Curso de JavaScript</h2>
+      <p>Curso focado em linguagem back-end para desenvolvimento font-end</p>
+      <a href='https://www.youtube.com/watch?v=BXqUH86F-kA&list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm'><button>Assistir</button></a>
+    </section>
+ 
+      </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Code Blockers. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
