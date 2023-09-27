@@ -41,9 +41,10 @@ nav a {
   text-decoration: none;
   color: white;
 }
+
 /* Estilos dos produtos */
 .product {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(206, 206, 206);
   border: 1px solid #ddd;
   border-radius: 15px;
   padding: 1rem;
