@@ -1,30 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2em;
+    background: linear-gradient(210deg, rgb(75, 75, 75), rgb(44, 44, 44), rgb(0, 0, 0));
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+img {
+    width: 40%;
+  }
+
 .login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    bottom: -10vh;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    color: rgb(255, 92, 33);
     width: 300px;
+    height: 400px;
     text-align: center;
 }
 
 .login-container h2 {
     color: #333;
-}
-
-.login-container p {
-    color: #666;
-    margin-bottom: 20px;
 }
 
 .login-container input[type="text"],
@@ -33,13 +39,13 @@ body {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .login-container button {
-    width: 100%;
+    width: 100px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: rgb(255, 92, 33);
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -47,5 +53,21 @@ body {
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+    background-color: white;
+    border: 2px solid rgb(255, 92, 33);
+    color: rgb(255, 92, 33);
+    font-weight: bold;
+}
+.create_account {
+    color: white;
+    font-size: 14px;
+    padding-top: 20px;
+}
+a {
+    text-decoration: none;
+    color: rgb(255, 92, 33);
+}
+
+a:hover {
+    font-weight: bolder;
 }
