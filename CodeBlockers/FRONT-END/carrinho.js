@@ -1,55 +1,42 @@
-console.log("amem")
-if(document.readyState == "loading"){
-    document.addEventListener("DOMContentLoaded", ready)
-}else{
-ready()
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const productRows = document.querySelectorAll('.cart-product');
+    const totalContainer = document.querySelector('.cart-total-container span');
+    const purchaseButton = document.querySelector('.purchase-button');
 
-function ready(){
-    const removeProductButton = document.getElementsByClassName("remove-product-button")
-    for(var i = 0; i < removeProductButton.length; i++){
-        removeProductButton[i].addEventListener("click", removeProduct)
+    let total = 0;
+
+    // Adicionar evento de input para cada linha do produto
+    productRows.forEach(function (row) {
+        const price = parseFloat(row.querySelector('.cart-product-price').textContent.replace('R$', '').trim());
+        const quantityInput = row.querySelector('.product-qtd-input');
+        const removeButton = row.querySelector('.remove-product-button');
+
+        quantityInput.addEventListener('input', function () {
+            const quantity = parseInt(quantityInput.value, 10);
+            const subtotal = price * quantity;
+            updateTotal();
+        });
+
+        removeButton.addEventListener('click', function () {
+            row.remove();
+            updateTotal();
+        });
+    });
+
+    // Atualizar o total
+    function updateTotal() {
+        total = 0;
+        productRows.forEach(function (row) {
+            const price = parseFloat(row.querySelector('.cart-product-price').textContent.replace('R$', '').trim());
+            const quantity = parseInt(row.querySelector('.product-qtd-input').value, 10);
+            total += price * quantity;
+        });
+
+        totalContainer.textContent = `R$${total.toFixed(2)}`;
     }
 
-    const quantityInput = document.getElementsByClassName("product-qtd-input")
-    for(var i = 0; i < quantityInput.length; i++){
-        quantityInput[i].addEventListener("change", updateTotal)
-    }
-
-    const addCardButtons = document.getElementsByClassName("addCard")
-    for(var i = 0; i < addCardButtons.length; i++){
-        addCardButtons[i].addEventListener("click", addProcutToCart)
-    }
-}
-
-function addProcutToCart(event){
-const button = event.target
-console.log(button)
-}
-    
-
-
-
-
-
-function removeProduct(event){
-    event.target.parentElement.parentElement.remove()
-    updateTotal()
-}
-
-function updateTotal(){
-let totalAmount = 0
-const cartProduct = document.getElementsByClassName("cart-product")
-for(var i = 0; i<cartProduct.length; i++){
-    console.log(cartProduct[i])
-
-    const productPrice = cartProduct[i].getElementsByClassName("cart-product-price")[0].innerHTML.replace("R$", "").replace(",", ".")
-    const productQuantity = cartProduct[i].getElementsByClassName("product-qtd-input")[0].value
-   
-     totalAmount = totalAmount + (productPrice * productQuantity)
-
-}     
-totalAmount = totalAmount.toFixed(2)
-totalAmount = totalAmount.replace(".", ",")
-document.querySelector(".cart-total-container span").innerHTML = "R$" + totalAmount
-}
+    // Adicionar evento de clique para o botão de compra
+    purchaseButton.addEventListener('click', function () {
+        alert(`Compra finalizada! Total: R$${total.toFixed(2)}`);
+    });
+});
